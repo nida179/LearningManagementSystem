@@ -21,9 +21,11 @@ public class StudentList {
         }
     }
     public boolean removeStudent(Student s){
-        if(students.contains(s)) return true;
-        else {
-            students.remove(s);
+          if(students.contains(s)) {
+          students.remove(s);
+          return true;
+          }
+          else {
             return false;
         }
     }
