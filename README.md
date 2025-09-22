@@ -1,5 +1,7 @@
 ## 📚 LEARNING MANAGEMENT SYSTEM (LMS)
 
+
+
 📕 Overview:
 The Learning Management System (mini-LMS) implemented in Java. The projects focuses on Objecct-Oriented Programming (OOP) principles such as encapsulation , inheritance , and composition. It stimulates a simple LMS where courses and students are managed through Java classes and objects.
 
