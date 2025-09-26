@@ -33,6 +33,14 @@ public class CourseList  implements Cloneable{
             return false;  //nothing to remove
         }
     }
+    public Object clone() throws CloneNotSupportedException{
+        CourseList copy = (CourseList) super.clone();
+        copy.courses = new ArrayList<>();
+        for(Course c : this.courses){
+            copy.courses.add((Course) c.clone());
+        }
+        return copy;
+    }
     public List<Course> getCourses(){
         return courses;
     }
