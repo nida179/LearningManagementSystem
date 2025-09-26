@@ -29,6 +29,49 @@ public class StudentList {
             return false;
         }
     }
+    public void searchByName(String name){
+        for(Student s : students){
+            if(name.equalsIgnoreCase(s.getName())){
+                System.out.println("STUDENT IS FOUND: "+s.getName()+" SEAT_NUMBER IS: "+s.getSeatNo());
+            }
+        }
+    }
+    public boolean searchBySeatNumber(String seatN){
+        for(Student s : students){
+            if(seatN.equals(s.getSeatNo())){
+                System.out.println("STUDENT IS FOUND: "+s.getName()+" SEAT_NUMBER IS: "+s.getSeatNo());
+                return true;
+            }
+        }
+        return false;
+    }
+    public List<Student> searchByCourse(String courseName){
+        List<Student> result = new ArrayList<>();
+        for(Student s: students){
+            for(Course c: s.getCourses()){
+                if(c.getCourseName().equalsIgnoreCase(courseName)){
+                    result.add(s);
+                    break;  // stop checking more courses for this student if the course is found.
+                }
+            }
+        }
+        if(result.isEmpty()){
+            System.out.println("No student is enrolled in this course!!"+courseName);
+        } else {
+            System.out.println("Student enrolled in this course are: "+courseName);
+            for(Student s: students){
+                System.out.println("-"+s.getName()+" (SeatNo: "+s.getSeatNo()+")");
+            }
+        }
+        return result;
+    }
+    // sorting
+    public void sortByName(){
+        students.sort(Comparator.comparing(Student::getName));
+    }
+    public void sortBySeatNumber(){
+        students.sort(Comparator.comparing(Student::getSeatNo));
+    }
     // get all students:
     public List<Student> getStudents(){
         return students;
@@ -46,4 +89,18 @@ public class StudentList {
         }
         return sb.toString();
     }
+     public Object clone() throws CloneNotSupportedException{
+        try {
+            StudentList copy = (StudentList) super.clone();
+            copy.students = new ArrayList<>();
+            for (Student c : this.students) {
+                copy.students.add((Student) c.clone());
+            }
+            return copy;
+        } catch (CloneNotSupportedException e){
+            System.out.println("Clone Not Supported");
+        }
+    return null;
+    }
+}
 }
