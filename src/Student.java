@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student {
+public class Student implements Cloneable {
     private String name;
     private int seatNo;
     private List<Course> courses = new ArrayList<>(100);
