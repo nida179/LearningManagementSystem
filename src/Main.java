@@ -52,10 +52,12 @@ public class Main {
         System.out.println(cc.getCourses());
 
         System.out.println();
-        System.out.println();
-        System.out.println(s1);
-
         s.searchBySeatNumber("115");
         s.searchByCourse("oops");
+        
+        System.out.println(s.clone());
+        s.sortByName();
+        System.out.println("After sorting");
+        s.display();
     }
 }
