@@ -67,10 +67,35 @@ public class StudentList {
     }
     // sorting
     public void sortByName(){
-        students.sort(Comparator.comparing(Student::getName));
+        int  = students.size();
+        for(int i =0;i<n-1;i++){
+            int min=i;
+            for(int j =i+1;j<n;j++){
+                String name1 = students.get(j).getName();
+                String name2 = students.get(min).getName();
+                if(name1.compareTo(name2)<0){
+                    min =j;
+                }
+                // swaping
+                Student temp = students.get(min);
+                students.set(min,students.get(i));
+                sudents.set(i,temp);
+         }
     }
     public void sortBySeatNumber(){
-        students.sort(Comparator.comparing(Student::getSeatNo));
+        int n = students.size();
+        for(int i =0;i<n-1;i++){
+            int min=i;
+            for(int j =i+1;j<n;j++){
+                String name1 = students.get(j).getSeatNo();
+                String name2 = students.get(min).getSeatNo();
+                if(name1.compareTo(name2)<0){
+                    min =j;
+                }
+                // swaping
+                Student temp = students.get(min);
+                students.set(min,students.get(i));
+                students.set(i,temp);
     }
     // get all students:
     public List<Student> getStudents(){
