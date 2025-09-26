@@ -63,5 +63,7 @@ public class Student {
     public String toString(){
         return "STUDENT NAME: "+name+"\nSEATNO: "+seatNo+"\nCOURSES: "+courses;
     }
-
+    public Object clone() throws CloneNotSupportedException{
+        return super.clone();
+    }
 }
