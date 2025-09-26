@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class StudentList {
+public class StudentList implements Cloneable{
     private List<Student> students = new ArrayList<>(100);
 
     StudentList(){
@@ -115,17 +115,11 @@ public class StudentList {
         return sb.toString();
     }
      public Object clone() throws CloneNotSupportedException{
-        try {
             StudentList copy = (StudentList) super.clone();
             copy.students = new ArrayList<>();
             for (Student c : this.students) {
                 copy.students.add((Student) c.clone());
             }
             return copy;
-        } catch (CloneNotSupportedException e){
-            System.out.println("Clone Not Supported");
-        }
-    return null;
     }
-}
 }
