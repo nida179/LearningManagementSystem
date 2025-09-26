@@ -46,12 +46,16 @@ public class Main {
         s.addStudent(s2);
         s.addStudent(s3);
         s.display();
-        System.out.println();
+        System.out.println("************");
         System.out.println("==COURSE CATALOG==");
-        System.out.println(cc);
+        System.out.println("************");
+        System.out.println(cc.getCourses());
 
         System.out.println();
         System.out.println();
         System.out.println(s1);
+
+        s.searchBySeatNumber("115");
+        s.searchByCourse("oops");
     }
 }
