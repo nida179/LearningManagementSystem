@@ -36,9 +36,9 @@ public class StudentList implements Cloneable{
             }
         }
     }
-    public boolean searchBySeatNumber(String seatN){
+    public boolean searchBySeatNumber(int seatN){
         for(Student s : students){
-            if(seatN.equals(s.getSeatNo())){
+            if(seatN==(s.getSeatNo())){
                 System.out.println("STUDENT IS FOUND: "+s.getName()+" SEAT_NUMBER IS: "+s.getSeatNo());
                 return true;
             }
@@ -87,9 +87,9 @@ public class StudentList implements Cloneable{
         for(int i =0;i<n-1;i++){
             int min=i;
             for(int j =i+1;j<n;j++){
-                String name1 = students.get(j).getSeatNo();
-                String name2 = students.get(min).getSeatNo();
-                if(name1.compareTo(name2)<0){
+                int name1 = students.get(j).getSeatNo();
+                int name2 = students.get(min).getSeatNo();
+                if(name1<(name2)){
                     min =j;
                 }
                 // swaping
